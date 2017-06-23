@@ -1,0 +1,49 @@
+// Header
+
+.banner {
+  width: 100%;
+  background-color: #111;
+  position: relative;
+  z-index: 10;
+
+  .banner__links {
+    padding: 0 25px;
+    display: flex;
+
+    a.banner__link {
+      color: rgba(255, 255, 255, 0.42);
+      padding: 6px 16px 8px;
+      font-size: 12px;
+      font-weight: lighter;
+      border-right: 1px solid rgba(255, 255, 255, 0.25);
+      border-top: 2px solid transparent;
+
+      &:hover {
+        text-decoration: none;
+        color: $brand-orange;
+        border-top-color: $brand-orange;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .banner {
+    .banner__links {
+      padding: 0 15px;
+
+      a.banner__link {
+        font-size: 10px;
+        padding: 3px 8px 5px;
+      }
+    }
+  }
+}
+
+.banner .nav li {
+  @extend .nav-item;
+}
+
+.banner .nav a {
+  @extend .nav-link;
+}

@@ -1,0 +1,115 @@
+.PrimaryNav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: $font-quicksand;
+  padding: 22px;
+  position: relative;
+  z-index: 10;
+
+  .mobile {
+    display: none;
+  }
+
+  .brand {
+    color: white;
+    padding: 0 22px;
+
+    img {
+      width: 150px;
+      height: auto;
+    }
+  }
+
+  .navlist {
+    display: flex;
+    align-items: center;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+
+    li > a {
+      color: white;
+      padding: 0 18px;
+      font-size: 16px;
+
+      &:hover {
+        text-decoration: none;
+        color: #4398c2;
+      }
+    }
+
+    .navitem {
+      text-align: center;
+    }
+
+    .QuoteButton {
+      padding: 16px 22px;
+
+      &:hover {
+        color: white;
+      }
+    }
+  }
+}
+@media screen and (max-width: 1199px) {
+  .PrimaryNav .navlist li > a {
+    padding: 0 12px;
+    font-size: 14px;
+  }
+}
+@media screen and (max-width: 991px) {
+  .PrimaryNav .navlist li > a {
+    padding: 0 10px;
+    font-size: 12px;
+  }
+
+  .PrimaryNav .QuoteButton {
+    display: none;
+  }
+}
+@media screen and (max-width: 767px) {
+  .PrimaryNav {
+    display: block;
+    position: relative;
+
+    .nav {
+      background-color: rgba(0, 0, 0, 0.3);
+      margin-left: -22px;
+      margin-right: -22px;
+      margin-top: 15px;
+      display: block;
+    }
+
+    .navlist {
+      display: none;
+    }
+
+    .navlist.active {
+      display: flex !important;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .brand {
+      padding: 0;
+    }
+
+    .mobile {
+      display: block;
+      position: absolute;
+      top: calc(22px - 2px + 7px);
+      right: 22px;
+      padding: 0 5px 0 4px;
+
+      a {
+        color: white;
+
+        &:hover {
+          color: white;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}
