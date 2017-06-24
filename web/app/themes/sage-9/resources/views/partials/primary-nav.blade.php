@@ -1,3 +1,8 @@
+<?php
+   $locations = get_nav_menu_locations();
+   $menu = wp_get_nav_menu_object( $locations[ 'primary_navigation' ] );
+   $menu_items = wp_get_nav_menu_items($menu->term_id);
+?>
 <nav class="PrimaryNav">
    <div class="brand">
       <img src="@asset('images/brand.png')" alt="">
@@ -8,12 +13,10 @@
 
    <div class="nav">
       <ul class="navlist">
-         <li class="navitem"><a href="#">Home</a></li>
-         <li class="navitem"><a href="#">About Us</a></li>
-         <li class="navitem"><a href="#">Services</a></li>
-         <li class="navitem"><a href="#">Projects</a></li>
-         <li class="navitem"><a href="#">Contact Us</a></li>
-         <li class="navitem"><a href="#">More</a></li>
+         @foreach ($menu_items as $item)
+            <li class="navitem"><a href="{{ $item->url }}">{{ $item->title }}</a></li>
+         @endforeach
+
          <li class="navitem"><a href="#">
             <i class="fa fa-bars"></i>
          </a></li>
